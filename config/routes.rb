@@ -9,4 +9,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  get 'facebook', to: 'facebookcharts#show', as: :facebook
+  get 'google', to: 'googlecharts#show', as: :google
+  get 'hotmart', to: 'hotmartcharts#show', as: :hotmart
+
 end
