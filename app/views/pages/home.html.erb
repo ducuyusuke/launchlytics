@@ -1,2 +1,33 @@
 <h1>Launchlytics</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+
+<div style="width:500px; height:300px">
+  <canvas id="myChart" data-graph-data="<%=@graph_data%>"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+  const data = JSON.parse(ctx.dataset.graphData)
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: data,
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
