@@ -22,6 +22,11 @@
   z-index: 1;
 }
 
+.container {
+  position: relative;
+  left: -311px;
+}
+
 .menu {
   // list-style: none;
   // margin: 0;
@@ -61,7 +66,7 @@
     flex-direction: row;
     align-items: center;
     /* right: 0px; */
-    gap: 125px;
+    gap: 69px;
     position: relative;
 }
 
