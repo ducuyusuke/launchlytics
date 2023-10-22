@@ -16,15 +16,18 @@
 
                   <script>
                     const ctx = document.getElementById('calendarChart');
-                    const data = JSON.parse(ctx.dataset.graphData)
+                    const gData = JSON.parse(ctx.dataset.graphData)[0]
+                    console.log("data", gData.datasets[0].data)
+                    console.log("label", gData.datasets[0].label)
+                    console.log("labels", gData.labels)
 
                     new Chart(ctx, {
                       type: 'bar',
                       data: {
-                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        labels: gData.labels,
                         datasets: [{
-                          label: '# of Votes',
-                          data: data,
+                          label: gData.datasets[0].label,
+                          data: gData.datasets[0].data,
                           borderWidth: 1
                         }]
                       },
@@ -98,7 +101,7 @@
                         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                         datasets: [{
                           label: '# of Votes',
-                          data: data,
+                          data: data3,
                           borderWidth: 1
                         }]
                       },
@@ -132,7 +135,7 @@
                         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                         datasets: [{
                           label: '# of Votes',
-                          data: data,
+                          data: data4,
                           borderWidth: 1
                         }]
                       },
@@ -204,7 +207,7 @@
                         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                         datasets: [{
                           label: '# of Votes',
-                          data: data,
+                          data: data6,
                           borderWidth: 1
                         }]
                       },
