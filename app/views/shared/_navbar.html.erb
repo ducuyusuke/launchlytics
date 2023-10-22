@@ -1,24 +1,33 @@
 <div class="container">
+
   <div class="container-flex">
     <div class="navbar-container">
       <%= content_tag :div, class: "content" do %>
 
         <%= content_tag :navbar, id: "left" do %>
-
           <%= content_tag :ul do %>
 
             <%= content_tag :div, class: "menu me-auto" do %>
               <div class="menu-text">
+
+                <%= content_tag :li, class: "nav-item overview" do %>
+                  <i class="fa fa-home"></i>
+                <% end %>
+
                 <%= content_tag :li, class: "nav-item facebook" do %>
-                  <%= content_tag :a, "Facebook" %>
+                  <i class="fab fa-facebook"></i>
                 <% end %>
 
                 <%= content_tag :li, class: "nav-item hotmart" do %>
-                  <%= content_tag :a, "HotMart" %>
+                  <i class="fab fa-free-code-camp"></i>
                 <% end %>
 
                 <%= content_tag :li, class: "nav-item google" do %>
-                  <%= content_tag :a, "Google"  %>
+                  <i class="fab fa-google"></i>
+                <% end %>
+
+                  <%= content_tag :li, class: "nav-item charts" do %>
+                  <i class="fa fa-area-chart"></i>
                 <% end %>
 
                   <%= content_tag :li, class: "slider" do %>
@@ -31,19 +40,25 @@
     </div>
 
     <div class="render-container">
+
       <%= content_tag :div, id: "content-container" do %>
 
+        <%= content_tag :div, id: "overview-page" do %>
+            <%= render partial: "overview"%>
+        <% end %>
+
         <%= content_tag :div, id: "facebook-page" do %>
-              <%= render partial: "facebook"%>
-            <% end %>
+          <%= render partial: "facebook"%>
+        <% end %>
 
-          <%= content_tag :div, id: "google-page" do %>
-              <%= render partial: "google"%>
-            <% end %>
+        <%= content_tag :div, id: "google-page" do %>
+          <%= render partial: "google"%>
+        <% end %>
 
-          <%= content_tag :div, id: "hotmart-page" do %>
-              <%= render partial: "hotmart"%>
-            <% end %>
+        <%= content_tag :div, id: "hotmart-page" do %>
+          <%= render partial: "hotmart"%>
+        <% end %>
+
       <% end %>
 
     </div>

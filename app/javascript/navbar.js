@@ -3,13 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const slider = document.querySelector(".slider");
   const menu = document.querySelector(".menu");
 
-  let selectedPartial = document.getElementById("facebook-page");
+  let selectedPartial = document.getElementById("overview-page");
 
   listItems.forEach((item) => {
     item.addEventListener("click", (event) => {
       event.preventDefault();
 
       const clickedPartialId = item.classList[1];
+      console.log(clickedPartialId);
       const clickedPartial = document.getElementById(`${clickedPartialId}-page`);
 
       selectedPartial.style.display = "none";
@@ -33,6 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const aboutLi = document.querySelector("navbar#left ul li.facebook");
+  const aboutLi = document.querySelector("navbar#left ul li.overview");
   aboutLi.classList.add("active");
 });
