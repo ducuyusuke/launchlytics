@@ -15,17 +15,18 @@
                   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
                   <script>
+
                     const ctx30 = document.getElementById('calendarChart30');
                     const data30 = JSON.parse(ctx.dataset.graphData)
 
                     new Chart(ctx30, {
                       type: 'bar',
                       data: {
-                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        labels: ['05-2023', '06-2023', '07-2023', '08-2023', '09-2023', '10-2023'],
                         datasets: [{
-                          label: '# of Votes',
+                          label: 'Leads Created',
 
-                          data: data30,
+                          data: ['2500', '2800', '3500', '5000', '9300', '9500', '10000' ],
 
                           borderWidth: 1
                         }]
@@ -94,25 +95,24 @@
                     const ctx32 = document.getElementById('calendarChart32');
                     const data32 = JSON.parse(ctx.dataset.graphData)
 
-                    new Chart(ctx32, {
-                      type: 'line',
-                      data: {
-                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+              new Chart(ctx32, {
+                    type: 'doughnut',
+                    data: {
+                      labels: ['À vista', 'Parcelado'],
                         datasets: [{
-                          label: '# of Votes',
-                          data: data32,
-
-                          borderWidth: 1
+                            data: [40, 60], // This line was missing a closing bracket
+                            borderWidth: 1
                         }]
-                      },
-                      options: {
+                    },
+                    options: {
                         scales: {
-                          y: {
-                            beginAtZero: true
-                          }
+                            y: {
+                                beginAtZero: true
+                            }
                         }
-                      }
-                    });
+                    }
+                });
+
                   </script>
 
 
@@ -130,7 +130,7 @@
                     const data33 = JSON.parse(ctx.dataset.graphData)
 
                     new Chart(ctx33, {
-                      type: 'line',
+                      type: 'bar',
                       data: {
                         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                         datasets: [{
@@ -169,15 +169,11 @@
                     new Chart(ctx34, {
                             data: {
                                 datasets: [{
-                                    type: 'bar',
-                                    label: 'Bar Dataset',
-                                    data: [10, 20, 30, 40]
-                                }, {
                                     type: 'line',
-                                    label: 'Line Dataset',
-                                    data: [5, 15, 25, 50],
+                                    label: 'Opportunities Won',
+                                    data: [1250, 2000, 3340, 4450, 4300, 5488]
                                 }],
-                                labels: ['January', 'February', 'March', 'April']
+                                labels: ['05-2023', '06-2023', '07-2023', '08-2023', '09-2023', '10-2023']
                             },
                           options: {
                             scales: {
