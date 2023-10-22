@@ -3,3 +3,57 @@ body {
   background-color: #3A506B;
 }
 
+.home-banner-container {
+  position: relative;
+  width: 165%;
+  height: 60vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 24px;
+  overflow: hidden; /* Hide overflow from the background image */
+}
+
+.home-banner-bg {
+  background-image: url('home-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Place it behind the content */
+  transition: transform 0.2s ease; /* Add a smooth transition for the parallax effect */
+}
+
+@media (max-width: 768px) {
+  .home-banner-bg {
+    background-position: 85%;
+  }
+}
+
+.home-banner-content {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
+  width: 45%;
+}
+
+@media (max-width: 991px) {
+  .home-banner-content {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .mobile-home-banner-content {
+    display: none;
+  }
+}
+
+.mobile-home-banner-content {
+  padding-top: 12px;
+  text-align: center;
+  margin: 4%;
+}
