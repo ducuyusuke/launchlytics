@@ -9,7 +9,7 @@
                 <div id="calendar_chart">
 
                   <div style="position: relative;top: 3px;width:500px;height:300px;left: 33px;">
-                    <canvas id="calendarChart" data-graph-data="<%=@graph_data%>"></canvas>
+                    <canvas id="calendarChart" data-graph-data="<%=@graph_data.to_json%>"></canvas>
                   </div>
 
                   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
