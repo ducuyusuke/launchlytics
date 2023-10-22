@@ -1,23 +1,222 @@
 <div class="page-container">
-  <div class="container-facebook">
-    <div class="facebook">
-      <div class="facebook-chart">
-        <div class="first-box">
-          <div class="ctr-charts">
-            <div class="quadrado"></div>
+  <div class="container-overview">
+    <div class="overview">
+      <div class="overview-charts">
+        <div class="overview-first-box">
+          <div class="overview-ctr-charts">
+            <div class="overview-chart_1">
+              <%# First chart %>
+                <div id="calendar_chart">
+
+                  <div style="position: relative;top: 3px;width:500px;height:300px;left: 33px;">
+                    <canvas id="calendarChart11" data-graph-data="<%=@graph_data%>"></canvas>
+                  </div>
+
+                  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+                  <script>
+                    const ctx13 = document.getElementById('calendarChart11');
+                    const data13 = JSON.parse(ctx.dataset.graphData)
+
+                    new Chart(ctx13, {
+                      type: 'bar',
+                      data: {
+                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        datasets: [{
+                          label: '# of Votes',
+                          data: data,
+                          borderWidth: 1
+                        }]
+                      },
+                      options: {
+                        scales: {
+                          y: {
+                            beginAtZero: true
+                          }
+                        }
+                      }
+                    });
+                  </script>
+              </div>
+            </div>
           </div>
-          <div class="conver-charts">
-            <div class="quadrado2"></div>
+          <div class="overview-conver-charts">
+            <div class="lateral-chart">
+              <div class="overview-chart_2">
+
+
+                  <div style="position: relative; top: 83px; width: 480px; height: 266px;">
+                    <canvas id="calendarChart6" data-graph-data="<%=@graph_polar%>"></canvas>
+                  </div>
+
+                  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+                  <script>
+                    const ctx7 = document.getElementById('calendarChart6');
+                    const data7 = JSON.parse(ctx.dataset.graphData)
+
+                    new Chart(ctx7, {
+                      type: 'polarArea',
+                      data: {
+                        labels: ['Age: 18-30', 'Sex: Male', 'Sex: Female', 'City: Brazil', 'Hour: 15h', 'CTR: R$0,62'],
+                        datasets: [{
+                          label: '# of Votes',
+                          data: [30, 55, 25, 30, 40, 60],
+                          borderWidth: 1
+                        }]
+                      },
+                      options: {
+                        scales: {
+                          y: {
+                            beginAtZero: true
+                          }
+                        }
+                      }
+                    });
+                  </script>
+              </div>
+            </div>
           </div>
         </div>
-          <div class="overview-second-box">
-            <div class="botton-overview">
-              <div class="quadrado3"></div>
-              <div class="quadrado4"></div>
+        <div class="overview-second-box">
+          <div class="botton-overview">
+            <div class="overview-chart_3">
+
+                  <div style="width: 296px; height: 260px; position: relative; top: 23px;">
+                    <canvas id="calendarChart7" data-graph-data="<%=@graph_data%>"></canvas>
+                  </div>
+
+                  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+                  <script>
+                    const ctx8 = document.getElementById('calendarChart7');
+                    const data8 = JSON.parse(ctx.dataset.graphData)
+
+                    new Chart(ctx8, {
+                      type: 'line',
+                      data: {
+                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        datasets: [{
+                          label: '# of Votes',
+                          data: data,
+                          borderWidth: 1
+                        }]
+                      },
+                      options: {
+                        scales: {
+                          y: {
+                            beginAtZero: true
+                          }
+                        }
+                      }
+                    });
+                  </script>
+
+
             </div>
-            <div class="second-botton-overview">
-              <div class="quadrado5"></div>
-              <div class="quadrado6"></div>
+            <div class="overview-chart_4">
+
+                  <div style="width: 296px; height: 260px; position: relative; top: 23px;">
+                    <canvas id="calendarChart8" data-graph-data="<%=@graph_data%>"></canvas>
+                  </div>
+
+                  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+                  <script>
+                    const ctx9 = document.getElementById('calendarChart8');
+                    const data9 = JSON.parse(ctx.dataset.graphData)
+
+                    new Chart(ctx9, {
+                      type: 'line',
+                      data: {
+                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        datasets: [{
+                          label: '# of Votes',
+                          data: data,
+                          borderWidth: 1
+                        }]
+                      },
+                      options: {
+                        scales: {
+                          y: {
+                            beginAtZero: true
+                          }
+                        }
+                      }
+                    });
+                  </script>
+            </div>
+          </div>
+          <div class="second-botton-overview">
+            <div class="overview-chart_5">
+
+
+                  <div style="width: 472px;height: 272px;position: relative;left: 91px;top: 14px;">
+                    <canvas id="calendarChart9" data-graph-data="<%=@graph_data%>"></canvas>
+                  </div>
+
+                  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+                  <script>
+                    const ctx10 = document.getElementById('calendarChart9');
+                    const data10 = JSON.parse(ctx.dataset.graphData)
+
+                    new Chart(ctx10, {
+                            data: {
+                                datasets: [{
+                                    type: 'bar',
+                                    label: 'Bar Dataset',
+                                    data: [10, 20, 30, 40]
+                                }, {
+                                    type: 'line',
+                                    label: 'Line Dataset',
+                                    data: [5, 15, 25, 50],
+                                }],
+                                labels: ['January', 'February', 'March', 'April']
+                            },
+                          options: {
+                            scales: {
+                              y: {
+                                beginAtZero: true
+                              }
+                            }
+                          }
+                        });
+                  </script>
+
+            </div>
+
+            <div class="overview-chart_6">
+
+                  <div style="width: 477px;height: 228px;position: relative;left: 1px;top: 12px;">
+                    <canvas id="calendarChart10" data-graph-data="<%=@graph_data%>"></canvas>
+                  </div>
+
+                  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+                  <script>
+                    const ctx11 = document.getElementById('calendarChart10');
+                    const data11 = JSON.parse(ctx.dataset.graphData)
+
+                    new Chart(ctx11, {
+                      type: 'pie',
+                      data: {
+                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        datasets: [{
+                          label: '# of Votes',
+                          data: data,
+                          borderWidth: 1
+                        }]
+                      },
+                      options: {
+                        scales: {
+                          y: {
+                            beginAtZero: true
+                          }
+                        }
+                      }
+                    });
+                  </script>
             </div>
           </div>
         </div>
