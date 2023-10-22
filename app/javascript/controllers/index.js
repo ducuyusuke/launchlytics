@@ -9,3 +9,12 @@ eagerLoadControllersFrom("controllers", application)
 // Lazy load controllers as they appear in the DOM (remember not to preload controllers in import map!)
 // import { lazyLoadControllersFrom } from "@hotwired/stimulus-loading"
 // lazyLoadControllersFrom("controllers", application)
+
+import FacebookController from "./facebook_controller"
+application.register("facebook", FacebookController)
+
+import GoogleController from "./google_controller"
+application.register("google", GoogleController)
+
+import HotmartController from "./hotmart_controller"
+application.register("hotmart", HotmartController)

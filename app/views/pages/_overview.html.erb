@@ -1,0 +1,62 @@
+<div class="page-container">
+  <div class="container-overview">
+    <div class="overview">
+      <div class="overview-charts">
+        <div class="overview-first-box">
+          <div class="overview-ctr-charts">
+            <div class="overview-chart_1">
+              <%# First chart %>
+                            <div id="calendar_chart">
+                <%= image_tag("calendar_logo.png", width: "25", height: "25") %>
+                <div style="width:500px; height:300px">
+                  <canvas id="calendarChart" data-graph-data="<%=@graph_data%>"></canvas>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+                <script>
+                  const ctx = document.getElementById('calendarChart');
+                  const data = JSON.parse(ctx.dataset.graphData)
+
+                  new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                      datasets: [{
+                        label: '# of Votes',
+                        data: data,
+                        borderWidth: 1
+                      }]
+                    },
+                    options: {
+                      scales: {
+                        y: {
+                          beginAtZero: true
+                        }
+                      }
+                    }
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="overview-conver-charts">
+            <div class="lateral-chart">
+              <div class="overview-chart_2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="overview-second-box">
+          <div class="botton-overview">
+            <div class="overview-chart_3"></div>
+            <div class="overview-chart_4"></div>
+          </div>
+          <div class="second-botton-overview">
+            <div class="overview-chart_5"></div>
+            <div class="overview-chart_6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
